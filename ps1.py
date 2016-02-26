@@ -51,7 +51,32 @@ def checkpalindrome(s):
         print("\"" + s + "\" is a palindrome!\n")
     else:
         print("\"" + s + "\" is not a palindrome.\n")
+        
+        
+def v2na(verb):
+    """
+    lead writer:
+    
 
+    what it does:
+    
+    
+    Expected arguments:
+    
+    """
+
+
+def checkword(s):
+    """
+    lead writer:
+    
+
+    what it does:
+    
+    
+    Expected arguments:
+    
+    """
 
     
     

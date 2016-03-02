@@ -66,10 +66,66 @@ def v2na(verb):
 
 def checkword(s):
     """
-    lead writer:
-    what it does:
-    Expected arguments:
+    lead writer: Zach Sherman
+    what it does: Various operations on a string.
+    Expected arguments: A string named s.
     """
+    
+    sLowercase = s.lower()
+    # Does it begin with a vowel? Or a consonant?
+    if sLowercase[0] == "a" or sLowercase[0] == "e" or sLowercase[0] == "i" or sLowercase[0] == "o" or sLowercase[0] == "u":
+        print("Begins with a vowel.")
+    else:
+        print("Does not begin with a vowel. Sorry about that.")
+
+    # How long is the word in number of characters?
+    stringLength = len(s)
+    print("The length of this string is " + str(stringLength))
+
+    # How many letters <e> does the word have? If there are two, are they adjacent?
+    eCounter = 0
+    lastIndex = 0
+    isAdjacent = False
+    while True:
+        eLocation = sLowercase.find("e", lastIndex)
+        if eLocation != -1:
+            if eLocation == lastIndex:
+                isAdjacent = True
+            eCounter += 1
+            lastIndex = eLocation + 1
+
+        else:
+            break
+
+    print("The number of e's within the string is equal to " + str(eCounter))
+    if isAdjacent:
+        print("There are adjacent e's in this string.")
+
+    else:
+        print("There are no adjacent e's in this string.")
+
+    # Does the word end in the noun morphemes <ality> or <fest>?
+    if sLowercase[-5:] == "ality":
+        print("This word ends in 'ality.'")
+    elif sLowercase[-4:] == "fest":
+        print("This word ends in 'fest.'")
+    else:
+        print("This word does not end in 'ality' or 'fest.'")
+
+    # Is the word a multiword expression (eg. hot dog or two-year-old)?
+    sMultiword = sLowercase.find(" ") != -1
+    if sMultiword:
+        print("This is a multiword expression.")
+    else:
+        print("This is not a multiword expression.")
+
+    # Is the word likely a proper name (eg. of a person, place, or organization)?
+    intFirstLetter = ord(s[0])
+    if intFirstLetter >= 65 and intFirstLetter <= 90:
+        print("This word is capitalized and probably a proper name.")
+    else:
+        print("This word is not capitalized, so I am assumming it is not a proper name. Great.")
+
 
 
 
